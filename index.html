@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data and Learning Where it Matters for Contact-Rich Manipulation</title>
+<meta name="description" content="We use expensive robot data only for the most challenging segment of a task and rely on non-robot data for free-space motion — for robust, generalizable, yet highly precise contact-rich manipulation.">
+<meta property="og:title" content="Data and Learning Where it Matters for Contact-Rich Manipulation">
+<meta property="og:description" content="Dense robot data only where it matters; planning everywhere else. 96% average success across four contact-rich tasks.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="static/images/posters/long_horizon_task.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="venue-pill"><span class="dot"></span>Anonymous Submission &middot; Under Review</span>
+
+    <h1 class="title">Data and Learning <span class="accent">Where&nbsp;it&nbsp;Matters</span> for Contact-Rich Manipulation</h1>
+
+    <p class="authors">Anonymous Author(s)</p>
+    <p class="author-note">Affiliation and author identities withheld for double-blind review</p>
+
+    <p class="tagline">
+      We use <span class="hl">expensive robot data only for the most challenging section</span> of the task,
+      and rely on <span class="hl">non-robot data</span> for everything else — for instance, free-space motion.
+      The result is a policy that is <span class="hl2">robust and generalizable</span>, yet <span class="hl2">very precise</span>.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn" href="paper.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        Paper (PDF)
+      </a>
+      <a class="btn alt" href="#money">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Watch Video
+      </a>
+      <span class="btn soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Code &amp; Data <span class="badge">Coming&nbsp;soon</span>
+      </span>
+    </div>
+
+    <span class="sped">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"/><polygon points="2 19 11 12 2 5 2 19"/></svg>
+      All videos are sped up.
+    </span>
+  </div>
+</header>
+
+<!-- ====================== MONEY VIDEO ====================== -->
+<section class="money" id="money">
+  <div class="wrap">
+    <div class="money-frame reveal">
+      <video muted loop playsinline controls preload="auto" poster="static/images/posters/long_horizon_task.jpg" data-autoplay>
+        <source src="static/videos/long_horizon_task.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="money-cap reveal">
+      <span class="tag">Sequential long-horizon task</span>
+      <h3>One policy chains many precise, contact-rich skills</h3>
+      <p>From a single natural-language prompt, the robot solves a long-horizon sequence in a cluttered scene — using motion planning for free-space transit and a learned policy only at each critical contact segment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ABSTRACT + STATS ====================== -->
+<section class="alt-bg" id="abstract">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <p class="eyebrow">Abstract</p>
+      <h2 class="sec-title">Collect data where it matters; plan everywhere else</h2>
+    </div>
+    <div class="abstract-card reveal">
+      <p>
+        Learned policies trained end-to-end on large datasets often remain <span class="em">brittle in high-precision
+        tasks and struggle with generalization</span>. We find that these limitations largely stem from a lack of
+        structure and focus in data collection. Our key insight is to leverage <span class="em">dense data collection
+        only for the critical, contact-rich segment</span> of a task and to rely on traditional planning during simple
+        free-space motion.
+      </p>
+      <p>
+        We propose an automated data-collection scheme combined with <span class="em">offline deep reinforcement
+        learning</span> for the critical segment — eliminating reliance on a teleoperator's skill and on online policy
+        updates. Across four challenging real-world tasks, using only <span class="em">2–2.5&nbsp;h of autonomous data
+        collection</span>, we achieve an average success rate of <span class="em">96%</span>, compared to the strongest
+        baseline at 55%. Notably, performance remains high in out-of-distribution scenarios where end-to-end approaches
+        struggle.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><div class="num">96%</div><div class="lab">Average success rate across four tasks</div></div>
+      <div class="stat reveal"><div class="num blue">55%</div><div class="lab">Strongest baseline, same tasks</div></div>
+      <div class="stat reveal"><div class="num">2–2.5h</div><div class="lab">Autonomous data collection per task</div></div>
+      <div class="stat reveal"><div class="num blue">1</div><div class="lab">Human demonstration to bootstrap</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== OOD ====================== -->
+<section id="robustness">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Robustness &amp; Generalization</p>
+      <h2 class="sec-title">Reliable far outside the training distribution</h2>
+      <p>Because end-to-end robot data is used only where it is truly needed, the policy generalizes gracefully to
+      distractors, clutter, new backgrounds, and even live human interference — settings where end-to-end approaches
+      typically break down.</p>
+    </div>
+
+    <div class="vgrid cols-2">
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/lego_ood_1.jpg" data-autoplay>
+            <source src="static/videos/lego_ood_1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Cluttered scene, novel distractors</h4><p>The workspace is filled with unseen objects and extra bricks — the policy still finds and stacks the target precisely.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/lego_ood_2.jpg" data-autoplay>
+            <source src="static/videos/lego_ood_2.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Live human interference</h4><p>A hand intrudes into the workspace during execution; the policy recovers and completes the insertion.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/shelf_ood.jpg" data-autoplay>
+            <source src="static/videos/shelf_ood.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Shelf stocking · OOD</span><h4>New background &amp; unseen items</h4><p>A different table, lighting, and a mix of novel grocery items and distractors — the items are still stowed correctly.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/siemens_ood_1.jpg" data-autoplay>
+            <source src="static/videos/siemens_ood_1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Fan-cover insertion · OOD</span><h4>Distractor objects &amp; clutter</h4><p>Surrounded by cables, boxes and stray parts, the policy still aligns and seats the cover with tight clearance.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/siemens_ood_2.jpg" data-autoplay>
+            <source src="static/videos/siemens_ood_2.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Fan-cover insertion · OOD</span><h4>Part handed over mid-task</h4><p>A human hands the part to the robot at a novel pose — pose estimation re-localizes and the insertion succeeds.</p></div>
+      </div>
+
+      <div class="vcard reveal" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--peach),#fff);border-style:dashed;">
+        <div style="padding:30px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--accent-d);line-height:1;">Robust<br>by design</div>
+          <p style="color:var(--ink-soft);margin:14px 0 0;font-size:.95rem;">Robot data only at the contact segment ⇒ fewer ways to overfit, more ways to generalize.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== METHOD ====================== -->
+<section class="alt-bg" id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Method</p>
+      <h2 class="sec-title">A single demo, autonomous data, sequential deployment</h2>
+      <p>The task is split into easy free-space motion (solved with off-the-shelf pose estimation and motion planning)
+      and the hard, contact-rich critical segment (solved with a learned policy from offline deep RL).</p>
+    </div>
+
+    <figure class="method-fig reveal">
+      <img src="static/images/method.png" alt="Method overview: Initialization from a single demonstration, autonomous data collection at the critical segment, and sequential deployment combining planning and learning.">
+      <figcaption>Dense data &amp; learning are spent only on the critical contact segment; planning and pose estimation handle the rest.</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">1</div><span class="time">~1&nbsp;min</span>
+        <h4>Initialization</h4>
+        <p class="sub">Single demonstration</p>
+        <ul><li>One successful demo</li><li>Record the goal state</li><li>Fixed scene</li></ul>
+      </div>
+      <div class="step reveal">
+        <div class="n">2</div><span class="time">~2.5&nbsp;hr</span>
+        <h4>Data Collection</h4>
+        <p class="sub">Autonomous</p>
+        <ul><li>Greedy-random exploration</li><li>Dense coverage of the critical segment</li><li>Policy from offline deep RL</li></ul>
+      </div>
+      <div class="step reveal">
+        <div class="n">3</div>
+        <h4>Deployment</h4>
+        <p class="sub">Prompt-conditioned</p>
+        <ul><li>Sequential policies: plan → learn → plan</li><li>F- and Q-function thresholds</li><li>Generalization via pose estimation</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== OURS (full rollouts) ====================== -->
+<section id="results">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Full Rollouts · Our Method</p>
+      <h2 class="sec-title">Very high success rates, end to end</h2>
+      <p>Uncut rollouts of our method on each task. Success rates are measured over 50 trials per task.</p>
+    </div>
+
+    <div class="vgrid cols-3">
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/lego_ours.jpg" data-autoplay>
+            <source src="static/videos/lego_ours.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Lego stacking</span><h4>94% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Precise brick-on-brick insertion with tight clearance.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/shelf_ours.jpg" data-autoplay>
+            <source src="static/videos/shelf_ours.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Shelf stocking</span><h4>98% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Stowing diverse grocery items into a tightly packed box.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/siemens_ours.jpg" data-autoplay>
+            <source src="static/videos/siemens_ours.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>96% success <span style="color:var(--ink-faint);font-weight:500;">(98% partial)</span></h4><p>Aligning and seating a fan cover under tight tolerances.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DATA COLLECTION ====================== -->
+<section class="alt-bg" id="data-collection">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Autonomous Data Collection</p>
+      <h2 class="sec-title">No teleoperator skill required</h2>
+      <p>Starting from a single demonstration, the robot autonomously collects dense data at the critical segment via
+      greedy-random exploration and grasp randomization — roughly 2–2.5&nbsp;hours per task, fully unattended.</p>
+    </div>
+
+    <div class="vgrid cols-3">
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/lego_data_collection.jpg" data-autoplay>
+            <source src="static/videos/lego_data_collection.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Lego stacking</span><h4>Self-collected interaction data</h4><p>Greedy-random exploration densely covers the contact region around the goal.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/shelf_data_collection.jpg" data-autoplay>
+            <source src="static/videos/shelf_data_collection.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Shelf stocking</span><h4>Self-collected interaction data</h4><p>Grasp randomization yields diverse, on-task contact experience.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline controls preload="none" poster="static/images/posters/siemens_datacollection.jpg" data-autoplay>
+            <source src="static/videos/siemens_datacollection.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>Self-collected interaction data</h4><p>Dense coverage of the insertion enables a robust offline-RL policy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="wrap">
+    <p class="ftitle">Data and Learning Where it Matters for Contact-Rich Manipulation</p>
+    <p class="anon">Anonymous submission &middot; under double-blind review.</p>
+    <p>All videos on this page are sped up. We will release all videos, training datasets, and evaluation datasets.</p>
+    <p style="margin-top:18px;opacity:.7;">Page built for the supplementary video material.</p>
+  </div>
+</footer>
+
+<script src="static/js/index.js"></script>
+</body>
+</html>
