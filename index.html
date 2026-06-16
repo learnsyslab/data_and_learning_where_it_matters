@@ -29,7 +29,7 @@
 
     <p class="tagline">
       We use <span class="hl">expensive robot data only for the most challenging section</span> of the task,
-      and rely on <span class="hl">non-robot data</span> wherever possible.
+      and rely on non-robot data wherever possible.
       The result is a policy that is <span class="hl2">robust and generalizable</span>, yet <span class="hl2">very precise</span>.
       This leads to reduced data-collection effort and automated data collection.
     </p>
@@ -66,7 +66,6 @@
     </div>
     <div class="money-cap reveal">
       <span class="tag">Long-horizon task</span>
-      <h3>One policy chains many precise, contact-rich skills</h3>
       <p>Using natural-language prompts, the robot solves a long-horizon sequence of challenging tasks in a cluttered scene — using motion planning for free-space motion and a learned policy only at the critical contact segments. We never collected data for this exact setup!</p>
     </div>
   </div>
@@ -109,7 +108,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Robustness &amp; Generalization</p>
-      <p>Because robot data is used only where truly needed, the policy generalizes to human interventions,
+      <p>Because robot data is used only where truly needed, the policy generalizes to human interference,
       scene-level distractors, clutter, and new backgrounds — settings where end-to-end approaches break down.</p>
     </div>
 
@@ -127,7 +126,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/lego_ood_2.jpg" data-autoplay>
             <source src="static/videos/lego_ood_2.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Live human interference</h4><p>A hand intrudes into the workspace during execution; the policy recovers and completes the insertion.</p></div>
+        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Picking from a human hand</h4><p>The policy works robustly when picking up the part from a moving human hand.</p></div>
       </div>
 
       <div class="vcard reveal">
@@ -135,7 +134,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/shelf_ood.jpg" data-autoplay>
             <source src="static/videos/shelf_ood.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k ood">Shelf stocking · OOD</span><h4>New background &amp; unseen items</h4><p>A different table, lighting, and a mix of novel grocery items and distractors — the items are still stowed correctly.</p></div>
+        <div class="vmeta"><span class="k ood">Shelf stocking · OOD</span><h4>Scene changes</h4><p>A different table, lighting, and a mix of novel grocery items and distractors — the items are still stowed correctly.</p></div>
       </div>
 
       <div class="vcard reveal">
@@ -169,7 +168,7 @@
 
     <figure class="method-fig reveal">
       <img src="static/images/method.png" alt="Method overview: Initialization from a single demonstration, autonomous data collection at the critical segment, and sequential deployment combining planning and learning.">
-      <figcaption>Dense data &amp; learning are spent only on the critical contact segment; planning and pose estimation handle the rest.</figcaption>
+      <figcaption>Dense data &amp; robot learning are spent on the critical contact segment; the rest of the task is solved with non-robot data.</figcaption>
     </figure>
   </div>
 </section>
@@ -180,7 +179,7 @@
     <div class="section-head">
       <p class="eyebrow">Rollouts · Our Method</p>
       <h2 class="sec-title">High success rates</h2>
-      <p>Uncut rollouts of our method on each task. Success rates are measured over 50 trials per task.</p>
+      <p>The key is to leverage dense data collection at the difficult segment, so that the policy does not go out-of-distribution at that segment of the task. Success rates below are measured over 50 trials per task.</p>
     </div>
 
     <div class="vgrid cols-3">
@@ -197,7 +196,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/shelf_ours.jpg" data-autoplay>
             <source src="static/videos/shelf_ours.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Shelf stocking</span><h4>98% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Stowing diverse grocery items into a tightly packed box.</p></div>
+        <div class="vmeta"><span class="k">Shelf stocking</span><h4>98% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Stowing grocery items into a tightly packed box.</p></div>
       </div>
 
       <div class="vcard reveal">
@@ -205,7 +204,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/siemens_ours.jpg" data-autoplay>
             <source src="static/videos/siemens_ours.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>96% success <span style="color:var(--ink-faint);font-weight:500;">(98% partial)</span></h4><p>Aligning and seating a fan cover under tight tolerances.</p></div>
+        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>96% success <span style="color:var(--ink-faint);font-weight:500;">(98% partial)</span></h4><p>Aligning and seating a PBT/PC-molded part under tight tolerances.</p></div>
       </div>
     </div>
   </div>
@@ -217,9 +216,9 @@
     <div class="section-head">
       <p class="eyebrow">Autonomous Data Collection</p>
       <h2 class="sec-title">No teleoperator required</h2>
-      <p>Only collecting data at the critical segment enables (almost) autonomous data collection. Bootstrapping from a
-      single demonstration, the robot densely collects data at the critical segment via greedy-random exploration.
-      Operator intervention is only required for resetting the scene.</p>
+      <p>Only collecting data at the critical segment enables (almost) autonomous data collection. Operator intervention
+      is only required for resetting the scene in some tasks.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">All the policies shown above were deployed using data collected with the exact setup shown below!</strong></p>
     </div>
 
     <div class="vgrid cols-3">
@@ -228,7 +227,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/lego_data_collection.jpg" data-autoplay>
             <source src="static/videos/lego_data_collection.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Lego stacking</span><h4>Self-collected interaction data</h4><p>Greedy-random exploration densely covers the contact region around the goal.</p></div>
+        <div class="vmeta"><span class="k">Lego stacking</span><h4>Self-collected interaction data</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -236,7 +235,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/shelf_data_collection.jpg" data-autoplay>
             <source src="static/videos/shelf_data_collection.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Shelf stocking</span><h4>Self-collected interaction data</h4><p>Grasp randomization yields diverse, on-task contact experience.</p></div>
+        <div class="vmeta"><span class="k">Shelf stocking</span><h4>Self-collected interaction data</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -244,7 +243,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/siemens_datacollection.jpg" data-autoplay>
             <source src="static/videos/siemens_datacollection.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>Self-collected interaction data</h4><p>Dense coverage of the insertion enables a robust offline-RL policy.</p></div>
+        <div class="vmeta"><span class="k">Fan-cover insertion</span><h4>Self-collected interaction data</h4></div>
       </div>
     </div>
   </div>

@@ -83,8 +83,9 @@ h1.title {
   line-height: 1.08;
   letter-spacing: -0.015em;
   margin: 26px auto 10px;
-  max-width: 16ch;
+  max-width: 26ch;
   color: var(--ink);
+  text-wrap: balance;
 }
 h1.title .accent {
   background: linear-gradient(180deg, transparent 62%, var(--peach) 62%);
@@ -103,7 +104,7 @@ h1.title .accent {
   font-size: clamp(1.18rem, 2.3vw, 1.55rem);
   line-height: 1.5;
   color: var(--ink);
-  max-width: 30ch;
+  max-width: 760px;
   margin: 0 auto 6px;
   font-weight: 420;
 }
@@ -220,6 +221,11 @@ h2.sec-title {
   max-width: 1060px; margin: 0 auto;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 22px; box-shadow: var(--shadow);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+}
+.method-fig:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 30px 70px -28px rgba(20, 34, 50, .42);
 }
 .method-fig img { width: 100%; height: auto; display: block; border-radius: 8px; }
 .method-fig figcaption { margin-top: 16px; text-align: center; color: var(--ink-soft); font-size: .96rem; }
@@ -242,7 +248,7 @@ h2.sec-title {
 footer {
   background: var(--ink); color: #c8d2dd; padding: 48px 0 40px; text-align: center;
 }
-footer .ftitle { font-family: var(--serif); color: #fff; font-size: 1.3rem; margin: 0 0 10px; }
+footer .ftitle { font-family: var(--serif); color: #fff; font-size: 1.3rem; margin: 0 auto 10px; max-width: none; }
 footer p { margin: 6px auto; max-width: 640px; font-size: .92rem; color: #93a3b3; }
 footer .anon { color: #fff; font-weight: 600; }
 footer a { color: #f0a883; }
