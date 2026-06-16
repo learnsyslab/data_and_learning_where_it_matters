@@ -107,7 +107,7 @@ h1.title .accent {
   margin: 0 auto 6px;
   font-weight: 420;
 }
-.tagline .hl { color: var(--accent-d); font-style: italic; }
+.tagline .hl { color: var(--accent-d); font-weight: 600; }
 .tagline .hl2 { color: var(--accent-2); font-weight: 600; font-style: normal; }
 
 .lead-out {
