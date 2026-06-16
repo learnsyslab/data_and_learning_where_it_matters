@@ -108,8 +108,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Robustness &amp; Generalization</p>
-      <p>Because robot data is used only where truly needed, the policy generalizes to human interference,
-      scene-level distractors, clutter, and new backgrounds — settings where end-to-end approaches break down.</p>
+      <p>Robot data and end-to-end learning are only used where needed to achieve the required precision. This allows the policy to generalize to scene-level distractors, such as to human interference, clutter, and new backgrounds — settings where end-to-end typically fail.</p>
     </div>
 
     <div class="vgrid cols-2">
@@ -118,7 +117,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/lego_ood_1.jpg" data-autoplay>
             <source src="static/videos/lego_ood_1.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Cluttered scene, novel distractors</h4><p>The workspace is filled with unseen objects and extra bricks — the policy still finds and stacks the target precisely.</p></div>
+        <div class="vmeta"><span class="k ood">Lego stacking · OOD</span><h4>Cluttered scene, distractors</h4><p>The workspace is filled with unseen objects and extra bricks — the policy still finds and stacks the target precisely.</p></div>
       </div>
 
       <div class="vcard reveal">
@@ -150,7 +149,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/siemens_ood_2.jpg" data-autoplay>
             <source src="static/videos/siemens_ood_2.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k ood">Fan-cover insertion · OOD</span><h4>Part handed over mid-task</h4><p>A human hands the part to the robot at a novel pose — pose estimation re-localizes and the insertion succeeds.</p></div>
+        <div class="vmeta"><span class="k ood">Fan-cover insertion · OOD</span><h4>Part handed over</h4><p>A human hands the part to the robot at a novel pose — pose estimation re-localizes and the insertion succeeds.</p></div>
       </div>
     </div>
   </div>
@@ -161,9 +160,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Method</p>
-      <h2 class="sec-title">A single demo, autonomous data collection, deployment</h2>
-      <p>The task is split into easy free-space motion (solved with off-the-shelf pose estimation and motion planning)
-      and the hard, contact-rich critical segment (solved with a learned policy from offline deep RL).</p>
+      <h2 class="sec-title">Single Demo, Autonomous Data Collection, Deployment</h2>
     </div>
 
     <figure class="method-fig reveal">
@@ -180,6 +177,8 @@
       <p class="eyebrow">Rollouts · Our Method</p>
       <h2 class="sec-title">High success rates</h2>
       <p>The key is to leverage dense data collection at the difficult segment, so that the policy does not go out-of-distribution at that segment of the task. Success rates below are measured over 50 trials per task.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">In the paper, we show that dense data collection through explorative offline DRL is required to achieve high success rates!</strong></p>
+
     </div>
 
     <div class="vgrid cols-3">
@@ -214,11 +213,13 @@
 <section class="alt-bg" id="data-collection">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Autonomous Data Collection</p>
+      <p class="eyebrow">(Almost) Autonomous Data Collection</p>
       <h2 class="sec-title">No teleoperator required</h2>
-      <p>Only collecting data at the critical segment enables (almost) autonomous data collection. Operator intervention
-      is only required for resetting the scene in some tasks.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">All the policies shown above were deployed using data collected as below!</strong></p>
+      <p>We show that dense data collection through explorative offline DRL is required to achieve high success rates for our tasks.
+        
+        
+        Operator intervention is only required for resetting the scene in some tasks.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">All the policies above are deployed using the data collection setting below!</strong></p>
     </div>
 
     <div class="vgrid cols-3">
