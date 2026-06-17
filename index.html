@@ -260,6 +260,69 @@
   </div>
 </section>
 
+<!-- ====================== BASELINE FAILURES ====================== -->
+<section id="baselines">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="color:#c0392b;">Baselines · Failure Cases</p>
+      <h2 class="sec-title">Where end-to-end learning falls short</h2>
+      <p>The same high-precision and out-of-distribution situations that our method handles cause strong end-to-end
+      baselines to fail — they lack precision at the contact segment and break down under distractors, clutter, and
+      scene changes.</p>
+    </div>
+
+    <div class="vgrid cols-3">
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_lack_precision.jpg" data-autoplay>
+            <source src="static/videos/baselines_lack_precision.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Lacks precision</h4><p>The end-to-end policy misaligns the brick and fails the tight-clearance insertion.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_simple1.jpg" data-autoplay>
+            <source src="static/videos/baselines_ood_simple1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>New object positions</h4><p>A changed brick arrangement is enough to make the policy miss the target.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_simple2.jpg" data-autoplay>
+            <source src="static/videos/baselines_ood_simple2.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Added distractor bricks</h4><p>With extra bricks in the scene, the policy no longer reaches the goal.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_difficult1.jpg" data-autoplay>
+            <source src="static/videos/baselines_ood_difficult1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Clutter &amp; novel objects</h4><p>Distractor objects — a cylinder and extra parts — break the end-to-end policy.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_shelf.jpg" data-autoplay>
+            <source src="static/videos/baselines_ood_shelf.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Shelf stocking · Baseline</span><h4>Novel item, out-of-distribution</h4><p>Faced with an unfamiliar item, the baseline fails to stow it in the box.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/baselines_distractor_siemens.jpg" data-autoplay>
+            <source src="static/videos/baselines_distractor_siemens.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Fan-cover insertion · Baseline</span><h4>Distractor objects</h4><p>With extra parts present, the baseline grasps the wrong object and fails.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ====================== FOOTER ====================== -->
 <footer>
   <div class="wrap">
