@@ -196,7 +196,7 @@
           <video muted loop playsinline controls preload="none" poster="static/images/posters/shelf_ours.jpg" data-autoplay>
             <source src="static/videos/shelf_ours.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k">Shelf stocking</span><h4>98% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Stowing grocery items into a tightly packed box.</p></div>
+        <div class="vmeta"><span class="k">Shelf stocking</span><h4>98% success <span style="color:var(--ink-faint);font-weight:500;">(100% partial)</span></h4><p>Stowing a yellow cardboard salt box into a tightly packed box.</p></div>
       </div>
 
       <div class="vcard reveal">
@@ -264,20 +264,22 @@
 <section id="baselines">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow" style="color:#c0392b;">Baselines · Failure Cases</p>
-      <h2 class="sec-title">Where end-to-end learning falls short</h2>
-      <p>The same high-precision and out-of-distribution situations that our method handles cause strong end-to-end
-      baselines to fail — they lack precision at the contact segment and break down under distractors, clutter, and
-      scene changes.</p>
+      <p class="eyebrow" style="color:#c0392b;">Baselines</p>
+      <h2 class="sec-title">Comparison to end-to-end</h2>
+      <p>The same high-precision and out-of-distribution tasks cause strong end-to-end baselines to fail — they lack
+      precision at the contact segment and break down under distractors. Further, our method naturally provides a
+      success classification through Q-function evaluation.</p>
     </div>
 
-    <div class="vgrid cols-3">
+    <p class="reveal" style="text-align:center;max-width:1000px;margin:-22px auto 36px;"><strong style="color:var(--ink);font-weight:700;">It is not clear whether simple scaling of end-to-end data collection solves this gap or is practical!</strong></p>
+
+    <div class="vgrid cols-2">
       <div class="vcard reveal">
         <div class="vid-wrap">
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_lack_precision.jpg" data-autoplay>
             <source src="static/videos/baselines_lack_precision.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Lacks precision</h4><p>The end-to-end policy misaligns the brick and fails the tight-clearance insertion.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Lacks precision</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -285,7 +287,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_simple1.jpg" data-autoplay>
             <source src="static/videos/baselines_ood_simple1.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>New object positions</h4><p>A changed brick arrangement is enough to make the policy miss the target.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>New object positions (OOD)</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -293,7 +295,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_simple2.jpg" data-autoplay>
             <source src="static/videos/baselines_ood_simple2.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Added distractor bricks</h4><p>With extra bricks in the scene, the policy no longer reaches the goal.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Added distractor bricks (OOD)</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -301,7 +303,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_difficult1.jpg" data-autoplay>
             <source src="static/videos/baselines_ood_difficult1.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Clutter &amp; novel objects</h4><p>Distractor objects — a cylinder and extra parts — break the end-to-end policy.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Lego stacking · Baseline</span><h4>Clutter &amp; novel objects (OOD)</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -309,7 +311,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_ood_shelf.jpg" data-autoplay>
             <source src="static/videos/baselines_ood_shelf.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Shelf stocking · Baseline</span><h4>Novel item, out-of-distribution</h4><p>Faced with an unfamiliar item, the baseline fails to stow it in the box.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Shelf stocking · Baseline</span><h4>Novel item in shelf (OOD)</h4></div>
       </div>
 
       <div class="vcard reveal">
@@ -317,9 +319,11 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_distractor_siemens.jpg" data-autoplay>
             <source src="static/videos/baselines_distractor_siemens.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Fan-cover insertion · Baseline</span><h4>Distractor objects</h4><p>With extra parts present, the baseline grasps the wrong object and fails.</p></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Fan-cover insertion · Baseline</span><h4>Distractor objects</h4></div>
       </div>
     </div>
+
+    <p style="max-width:880px;margin:36px auto 0;text-align:center;color:var(--ink-soft);">For instance, end-to-end policies fail to correctly detect target objects and instead grasp a similar-looking object (<strong style="color:var(--ink);">bottom right</strong>). End-to-end policies need heavy training data to avoid such failure cases, whereas other robust models — such as SAM3 — are far more robust toward object selection without using any robot data.</p>
   </div>
 </section>
 
