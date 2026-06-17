@@ -31,7 +31,6 @@
       We use <span class="hl">expensive robot data only for the most challenging section</span> of the task,
       and rely on non-robot data wherever possible.
       The result is a policy that is <span class="hl2">robust and generalizable, yet very precise.</span>
-      This leads to reduced data-collection effort and automated data collection.
     </p>
 
     <div class="btn-row">
@@ -66,8 +65,8 @@
     </div>
     <div class="money-cap reveal">
       <span class="tag">Long-horizon task</span>
-      <p>Using natural-language prompts, the robot solves a long-horizon sequence of challenging tasks in a cluttered scene — using motion planning for free-space motion <span style="color:var(--accent-2);font-weight:700;">including collision avoidance</span> and a learned policy only at the critical contact segments.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">We never collected data for this long-horizon task!</strong></p>
+      <p>Using natural-language prompts, the robot solves a very long-horizon sequence of challenging high-precision tasks in a changing and cluttered scene — using robot data only where necessary to achieve the required precision. For the rest of the motion, we rely on simple motion planning <span style="color:var(--accent-2);font-weight:700;">including collision avoidance</span>.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">We never collected any data in this specific scene!</strong></p>
     </div>
   </div>
 </section>
@@ -96,10 +95,10 @@
     </div>
 
     <div class="stats">
+      <div class="stat reveal"><div class="num blue">1</div><div class="lab">Human demonstration to bootstrap</div></div>
       <div class="stat reveal"><div class="num">96%</div><div class="lab">Average success rate across four tasks</div></div>
       <div class="stat reveal"><div class="num blue">55%</div><div class="lab">Strongest baseline (end-to-end), same tasks</div></div>
       <div class="stat reveal"><div class="num">2–2.5h</div><div class="lab">Autonomous data collection per task</div></div>
-      <div class="stat reveal"><div class="num blue">1</div><div class="lab">Human demonstration to bootstrap</div></div>
     </div>
   </div>
 </section>
@@ -109,8 +108,8 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Robustness &amp; Generalization</p>
-      <p>Robot data and end-to-end learning are only used where needed to achieve the required precision for our tasks. This allows the policy to achieve required precision while generalizing to scene-level distractors, such as human interference, clutter, and new backgrounds — settings where end-to-end policies typically fail.</p>
-      <p style="margin-top:14px;"><strong style="color:var(--ink);">Our method generalizes across the dimensions</strong>: scene-level distractors (objects, backgrounds), target object location, pick-up object location, collision avoidance, dynamic grasping from a human hand, and sequential task compositions.</p>
+      <p>Robot data and learning are only used where absolutely required to achieve the necessary precision for our tasks. This approach allows the policy to achieve the required precision while generalizing to entirely novel scenes — settings where end-to-end policies typically fail.</p>
+      <p style="margin-top:14px;"><strong style="color:var(--ink);">Our method generalizes across dimensions</strong>: scene-level distractors (objects and backgrounds), target object location, pick-up object location, collision avoidance, dynamic grasping from a human hand, and sequential task compositions.</p>
     </div>
 
     <div class="vgrid cols-2">
@@ -175,7 +174,7 @@
 
     <figure class="method-fig reveal">
       <img src="static/images/method.png" alt="Method overview: Initialization from a single demonstration, autonomous data collection at the critical segment, and sequential deployment combining planning and learning.">
-      <figcaption>Dense data &amp; robot learning are spent on the critical contact segment; the rest of the task is solved with non-robot data.</figcaption>
+      <figcaption>Dense data collection &amp; robot learning for the critical segment; the rest is solved without using any robot data.</figcaption>
     </figure>
   </div>
 </section>
@@ -187,7 +186,7 @@
       <p class="eyebrow">Rollouts · Our Method</p>
       <h2 class="sec-title">High success rates</h2>
       <p>The key is to leverage dense data collection at the difficult segment, so that the policy never goes out-of-distribution for that part of the task. Success rates below are measured over 50 trials per task.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">In the paper, we show that dense robot data and learning from offline DRL is required to achieve high success rates!</strong></p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">In the paper, we show that learning with offline DRL from densely collected data is required to achieve high success rates!</strong></p>
 
     </div>
 
@@ -280,7 +279,7 @@
       success classification through Q-function evaluation.</p>
     </div>
 
-    <p class="reveal" style="text-align:center;max-width:1000px;margin:-22px auto 36px;"><strong style="color:var(--ink);font-weight:700;">It is not clear whether simple scaling of end-to-end data collection is practical or solves the gap!</strong></p>
+    <p class="reveal" style="text-align:center;max-width:1000px;margin:-22px auto 36px;"><strong style="color:var(--ink);font-weight:700;">It is not clear whether simple scaling of end-to-end data collection is practical or solves the performance gap!</strong></p>
 
     <div class="vgrid cols-2">
       <div class="vcard reveal">
@@ -332,7 +331,7 @@
       </div>
     </div>
 
-    <p style="max-width:880px;margin:36px auto 0;text-align:center;color:var(--ink-soft);">For instance, end-to-end policies fail to correctly detect target objects and instead grasp a similar-looking object (<strong style="color:var(--ink);">bottom right</strong>). End-to-end policies need heavy training data to avoid such failure cases, whereas other robust models — such as SAM3 — are far more robust toward object selection without using any robot data.</p>
+    <p style="max-width:880px;margin:36px auto 0;text-align:center;color:var(--ink-soft);">For instance, end-to-end policies fail to correctly detect target objects and instead grasp a similar-looking object (<strong style="color:var(--ink);">bottom right</strong>). End-to-end policies need much training data to avoid such failure cases, whereas other models trained without any robot data — such as SAM3 for object detection — are far more robust by default.</p>
   </div>
 </section>
 
