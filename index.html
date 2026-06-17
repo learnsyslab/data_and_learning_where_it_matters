@@ -109,7 +109,8 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Robustness &amp; Generalization</p>
-      <p>Robot data and end-to-end learning are only used where needed to achieve the required precision. This allows the policy to generalize to scene-level distractors, such as human interference, clutter, and new backgrounds — settings where end-to-end policies typically fail.</p>
+      <p>Robot data and end-to-end learning are only used where needed to achieve the required precision for our tasks. This allows the policy to achieve required precision while generalizing to scene-level distractors, such as human interference, clutter, and new backgrounds — settings where end-to-end policies typically fail.</p>
+      <p style="margin-top:14px;"><strong style="color:var(--ink);">Our method generalizes across the dimensions</strong>: scene-level distractors (objects, backgrounds), target object location, pick-up object location, collision avoidance, dynamic grasping from a human hand, and sequential task compositions.</p>
     </div>
 
     <div class="vgrid cols-2">
@@ -151,6 +152,14 @@
             <source src="static/videos/siemens_ood_2.mp4" type="video/mp4"></video>
         </div>
         <div class="vmeta"><span class="k ood">Fan-cover insertion · OOD</span><h4>Part handed over</h4><p>A human hands the part to the robot at a novel pose — pose estimation re-localizes and the insertion succeeds.</p></div>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vid-wrap">
+          <video muted loop playsinline preload="none" poster="static/images/posters/collision_avoidance.jpg" data-autoplay>
+            <source src="static/videos/collision_avoidance.mp4" type="video/mp4"></video>
+        </div>
+        <div class="vmeta"><span class="k ood">Cluttered scene · Planning</span><h4>Collision avoidance</h4><p>In a densely cluttered workspace, motion planning routes the arm around obstacles to reach each target collision-free.</p></div>
       </div>
     </div>
   </div>
@@ -271,7 +280,7 @@
       success classification through Q-function evaluation.</p>
     </div>
 
-    <p class="reveal" style="text-align:center;max-width:1000px;margin:-22px auto 36px;"><strong style="color:var(--ink);font-weight:700;">It is not clear whether simple scaling of end-to-end data collection solves this gap or is practical!</strong></p>
+    <p class="reveal" style="text-align:center;max-width:1000px;margin:-22px auto 36px;"><strong style="color:var(--ink);font-weight:700;">It is not clear whether simple scaling of end-to-end data collection is practical or solves the gap!</strong></p>
 
     <div class="vgrid cols-2">
       <div class="vcard reveal">
@@ -319,7 +328,7 @@
           <video muted loop playsinline preload="none" poster="static/images/posters/baselines_distractor_siemens.jpg" data-autoplay>
             <source src="static/videos/baselines_distractor_siemens.mp4" type="video/mp4"></video>
         </div>
-        <div class="vmeta"><span class="k" style="color:#c0392b;">Fan-cover insertion · Baseline</span><h4>Distractor objects</h4></div>
+        <div class="vmeta"><span class="k" style="color:#c0392b;">Fan-cover insertion · Baseline</span><h4>Similar-looking distractor object (OOD)</h4></div>
       </div>
     </div>
 
