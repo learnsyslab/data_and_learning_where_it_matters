@@ -30,7 +30,7 @@
     <p class="tagline">
       We use <span class="hl">expensive robot data only for the most challenging section</span> of the task,
       and rely on non-robot data wherever possible.
-      The result is a policy that is <span class="hl2">robust and generalizable</span>, yet <span class="hl2">very precise</span>.
+      The result is a policy that is <span class="hl2">robust and generalizable, yet very precise.</span>
       This leads to reduced data-collection effort and automated data collection.
     </p>
 
@@ -66,7 +66,8 @@
     </div>
     <div class="money-cap reveal">
       <span class="tag">Long-horizon task</span>
-      <p>Using natural-language prompts, the robot solves a long-horizon sequence of challenging tasks in a cluttered scene — using motion planning for free-space motion and a learned policy only at the critical contact segments. <strong style="color:var(--ink);font-weight:700;">We never collected data for this long-horizon task!</strong></p>
+      <p>Using natural-language prompts, the robot solves a long-horizon sequence of challenging tasks in a cluttered scene — using motion planning for free-space motion <span style="color:var(--accent-2);font-weight:700;">including collision avoidance</span> and a learned policy only at the critical contact segments.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">We never collected data for this long-horizon task!</strong></p>
     </div>
   </div>
 </section>
@@ -96,7 +97,7 @@
 
     <div class="stats">
       <div class="stat reveal"><div class="num">96%</div><div class="lab">Average success rate across four tasks</div></div>
-      <div class="stat reveal"><div class="num blue">55%</div><div class="lab">Strongest baseline, same tasks</div></div>
+      <div class="stat reveal"><div class="num blue">55%</div><div class="lab">Strongest baseline (end-to-end), same tasks</div></div>
       <div class="stat reveal"><div class="num">2–2.5h</div><div class="lab">Autonomous data collection per task</div></div>
       <div class="stat reveal"><div class="num blue">1</div><div class="lab">Human demonstration to bootstrap</div></div>
     </div>
@@ -177,7 +178,7 @@
       <p class="eyebrow">Rollouts · Our Method</p>
       <h2 class="sec-title">High success rates</h2>
       <p>The key is to leverage dense data collection at the difficult segment, so that the policy never goes out-of-distribution for that part of the task. Success rates below are measured over 50 trials per task.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">In the paper, we show that dense robot data and learning from offline DRL is required to achieve our high success rates for the tasks!</strong></p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">In the paper, we show that dense robot data and learning from offline DRL is required to achieve high success rates!</strong></p>
 
     </div>
 
@@ -219,7 +220,7 @@
         
         
         Operator intervention is only required for resetting the scene in some tasks.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">All the policies above are deployed using data from the setups shown below!</strong></p>
+      <p style="margin-top:18px;"><strong style="color:var(--ink);font-weight:700;">All the policies above are deployed using data collected from the setups shown below!</strong></p>
     </div>
 
     <div class="vgrid cols-3">
