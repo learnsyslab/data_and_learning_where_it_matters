@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data and Learning Where it Matters for Contact-Rich Manipulation</title>
+<title>Data Where it Matters: Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation</title>
 <meta name="description" content="We use expensive robot data only for the most challenging segment of a task and rely on non-robot data for free-space motion — for robust, generalizable, yet highly precise contact-rich manipulation.">
-<meta property="og:title" content="Data and Learning Where it Matters for Contact-Rich Manipulation">
+<meta property="og:title" content="Data Where it Matters: Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation">
 <meta property="og:description" content="Dense robot data only where it matters; planning everywhere else. 96% average success across four contact-rich tasks.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="static/images/posters/long_horizon_task.jpg">
@@ -22,15 +22,15 @@
   <div class="wrap">
     <span class="venue-pill"><span class="dot"></span>Anonymous Submission &middot; Under Review</span>
 
-    <h1 class="title">Data and Learning <span class="accent">Where&nbsp;it&nbsp;Matters</span> for Contact-Rich Manipulation</h1>
+    <h1 class="title">Data <span class="accent">Where&nbsp;it&nbsp;Matters</span>:<span class="subtitle">Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation</span></h1>
 
     <p class="authors">Anonymous Author(s)</p>
     <p class="author-note">Affiliation and author identities withheld for double-blind review</p>
 
     <p class="tagline">
-      We use <span class="hl">expensive robot data only for the most challenging section</span> of the task,
-      and rely on non-robot data wherever possible.
-      The result is a policy that is <span class="hl2">robust and generalizable, yet very precise.</span>
+      We <span class="hl">autonomously collect robot data where it matters</span> &mdash; at the contact-rich segment of a task &mdash;
+      and learn from it with <span class="hl2">offline deep reinforcement learning</span>.
+      The result is a policy that is <strong style="color:var(--ink);font-weight:700;">robust and generalizable, yet very precise.</strong>
     </p>
 
     <div class="btn-row">
@@ -89,7 +89,7 @@
         We propose an <span class="em">automated data-collection scheme combined with offline deep reinforcement
         learning</span> for the critical segment — eliminating reliance on a teleoperator's skill and on online policy
         updates. Across four challenging real-world tasks, using only 2–2.5&nbsp;h of autonomous data collection, we
-        achieve an average success rate of 96%, compared to the strongest baseline at 55%. Notably, performance remains
+        achieve an average success rate of 96%, compared to 55% for a planning-only baseline and 37% for the strongest end-to-end baseline. Notably, performance remains
         high in <span class="em">out-of-distribution scenarios</span> where end-to-end approaches struggle.
       </p>
     </div>
@@ -97,7 +97,7 @@
     <div class="stats">
       <div class="stat reveal"><div class="num blue">1</div><div class="lab">Human demonstration to bootstrap</div></div>
       <div class="stat reveal"><div class="num">96%</div><div class="lab">Average success rate across four tasks</div></div>
-      <div class="stat reveal"><div class="num blue">55%</div><div class="lab">Strongest baseline (end-to-end), same tasks</div></div>
+      <div class="stat reveal"><div class="num blue">37%</div><div class="lab">Strongest end-to-end baseline, same tasks</div></div>
       <div class="stat reveal"><div class="num">2–2.5h</div><div class="lab">Autonomous data collection per task</div></div>
     </div>
   </div>
@@ -108,7 +108,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Robustness &amp; Generalization</p>
-      <p>Robot data and learning are only used where absolutely required to achieve the necessary precision for our tasks. This approach allows the policy to achieve the required precision while generalizing to entirely novel scenes — settings where end-to-end policies typically fail.</p>
+      <p><strong style="color:var(--ink);">As we use learning only locally, the policies generalize to scene-level changes.</strong> This approach allows the policy to achieve the required precision while generalizing to entirely novel scenes — settings where end-to-end policies typically fail.</p>
       <p style="margin-top:14px;"><strong style="color:var(--ink);">Our method generalizes across dimensions</strong>: scene-level distractors (objects and backgrounds), target object location, pick-up object location, collision avoidance, dynamic grasping from a human hand, and sequential task compositions.</p>
     </div>
 
@@ -224,7 +224,7 @@
     <div class="section-head">
       <p class="eyebrow">(Almost) Autonomous Data Collection</p>
       <h2 class="sec-title">No teleoperator required</h2>
-      <p>We show that dense data collection through explorative offline DRL is required to achieve high success rates for our tasks.
+      <p>We show that both our autonomous data collection and offline DRL are required to achieve high success rates for our tasks.
         
         
         Operator intervention is only required for resetting the scene in some tasks.</p>
@@ -338,7 +338,7 @@
 <!-- ====================== FOOTER ====================== -->
 <footer>
   <div class="wrap">
-    <p class="ftitle">Data and Learning Where it Matters for Contact-Rich Manipulation</p>
+    <p class="ftitle">Data Where it Matters: Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation</p>
     <p class="anon">Anonymous submission &middot; under double-blind review.</p>
     <p>All videos on this page are sped up. We will release all videos, training datasets, and evaluation datasets.</p>
     <p style="margin-top:18px;opacity:.7;">Page inspired by <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a> and extended with Claude.</p>
