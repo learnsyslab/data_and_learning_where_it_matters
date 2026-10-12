@@ -2,9 +2,9 @@
 
 Project page (supplementary video material) for an **anonymous submission under double-blind review**.
 
-> We use expensive robot data only for the most challenging section of the task and rely on
-> non-robot data (e.g. free-space motion) for the rest — yielding a policy that is robust and
-> generalizable, yet very precise.
+> We autonomously collect robot data where it matters — at the contact-rich segment of a task —
+> and learn from it with offline deep reinforcement learning. The result is a policy that is
+> robust and generalizable, yet very precise.
 
 ## Hosting (GitHub Pages)
 
