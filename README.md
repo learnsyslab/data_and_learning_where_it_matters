@@ -4,7 +4,8 @@ Project page (supplementary video material) for an **anonymous submission under 
 
 > We autonomously collect robot data where it matters — at the contact-rich segment of a task —
 > and learn from it with offline deep reinforcement learning. The result is a policy that is
-> robust and generalizable, yet very precise.
+> robust and generalizable, yet very precise. We modularly integrated learned local policies
+> with motion planning to solve long-horizon tasks.
 
 ## Hosting (GitHub Pages)
 
