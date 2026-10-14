@@ -1,4 +1,4 @@
-# Data Where it Matters: Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation
+# Learning Where it Matters: Autonomous Data Collection and Offline Deep Reinforcement Learning for Local Contact-Rich Manipulation
 
 Project page (supplementary video material) for an **anonymous submission under double-blind review**.
 
